@@ -4,9 +4,11 @@ import Publicacion from 'App/Models/Publicacione'
 export default class PublicacionesController {
   async setRegistrarPublicacion({request, response}: HttpContextContract){
     try {
+      
       const dataPublicacion = request.only(["codigo_publicacion", "codigo_grupo", "codigo_usuario", "titulo", "cuerpo"])
       const codigoPublicacion = dataPublicacion.codigo_publicacion
       const codigoPublicacionExistente: Number = await this.getValidarPublicacionExistente(codigoPublicacion);
+
       if (codigoPublicacionExistente === 0) {
         await Publicacion.create(dataPublicacion)
         response.status(200).json({"msg": "publicacion registrada con exito!"})

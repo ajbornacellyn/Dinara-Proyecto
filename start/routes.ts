@@ -28,13 +28,15 @@ Route.group(() => {
   Route.get('/listar-publicaciones', 'UsuariosController-getlistarUsuarios')
   Route.get('/listar-usuarios-grupos', 'UsuariosController.getListarUsuariosYGrupos')
   Route.get('/buscar-id/:id', 'UsuariosController.buscarPorId')
+  Route.get('/buscar-nombre/:nombre', 'UsuariosController.buscarPorNombre')
+  Route.get('/listar-grupos', 'GruposController.getListarGrupos')
 
 
   Route.post('/registrar-usuario', 'UsuariosController.setRegistrarUsuario')
   Route.post('/registro-perfil', 'PerfilsController.setRegistrarPerfil')
   Route.post('/registro-publicacion', 'PublicacionesController.setRegistrarPublicacion')
-  Route.post('/registro-grupo', 'GruposController.setRegistrarGrupo')
-  Route.post('/registro-usuario-grupo', 'UsuarioGruposController.setRegistrarUsuarioGrupo')
+  Route.post('/registro-grupos', 'GruposController.setRegistrarGrupo')
+  Route.post('/registro-usuario-grupo', 'GrupoUsuariosController.setRegistrarGrupoUsuario')
   Route.put('/actualizar-usuario/:id', 'UsuariosController.actualizarUsuario')
   Route.delete('/eliminar-usuario/:id', 'UsuariosController.eliminarUsuario')
 
